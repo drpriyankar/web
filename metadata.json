@@ -1,0 +1,10 @@
+{
+  "name": "Anandam Arogyam",
+  "description": "Scientific Ayurvedic Clinic Portal for Dr. Priyankar. Features a secure admin panel for appointment management, secure client-side lead capture, and SEO-optimized health education.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}

@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", sans-serif;
+  
+  --color-primary: #14532D;
+  --color-primary-light: #22C55E;
+  --color-bg-base: #FDFCFB;
+  --color-accent: #E5DED4;
+  --color-text-main: #111827;
+  --color-text-muted: #4B5563;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-base text-text-main font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-extrabold tracking-tight;
+  }
+}
+
+.glass {
+  @apply bg-white border border-gray-100;
+}
+
+.shadow-premium {
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-xl-premium {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-primary {
+  @apply bg-primary text-white px-8 py-4 rounded-full font-bold text-sm transition-all hover:scale-105 active:scale-95 shadow-lg shadow-primary/20;
+}
+
+.btn-secondary {
+  @apply bg-[#222222] text-white px-8 py-4 rounded-xl font-bold text-sm transition-all hover:brightness-125;
+}
+
+.btn-outline {
+  @apply border-2 border-primary text-primary px-8 py-4 rounded-xl font-bold bg-white text-sm transition-all hover:bg-primary/5 active:scale-95;
+}
