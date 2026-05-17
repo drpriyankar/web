@@ -469,51 +469,53 @@ const HomePage = ({ t }: { t: any }) => {
         keywords={["Ayurvedic Doctor Moradabad", "Dr. Priyankar Ayurveda", "Nadi Pariksha specialist", "Panchkarma center Moradabad"]}
       />
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-12 gap-12 items-center">
+      <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 lg:pt-48 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-12 gap-8 lg:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="col-span-12 lg:col-span-7 flex flex-col space-y-8"
+            className="col-span-12 lg:col-span-7 flex flex-col space-y-6 md:space-y-8 text-center lg:text-left"
           >
-            <div className="space-y-4">
-              <span className="bg-accent text-primary px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase inline-block">
-                {t.heroTag}
-              </span>
-              <h1 className="text-5xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight text-text-main">
+            <div className="space-y-4 md:space-y-6">
+              <div className="flex justify-center lg:justify-start">
+                <span className="bg-accent text-primary px-3 py-1 md:px-4 md:py-1.5 rounded-full text-[10px] md:text-xs font-bold tracking-widest uppercase inline-block">
+                  {t.heroTag}
+                </span>
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight text-text-main">
                 {t.heroTitleLine1} <span className="text-primary">{t.heroTitleLine2}</span>
               </h1>
-              <p className="text-xl text-text-muted leading-relaxed max-w-lg">
+              <p className="text-base md:text-xl text-text-muted leading-relaxed max-w-lg mx-auto lg:mx-0">
                 <span className="font-semibold text-text-main">{t.heroSubTagline}</span> {t.heroSub}
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/booking" className="btn-secondary flex items-center justify-center gap-3">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start">
+              <Link to="/booking" className="btn-secondary w-full sm:w-auto flex items-center justify-center gap-2 py-3 sm:py-2.5 px-8 rounded-xl shadow-lg shadow-black/10 hover:scale-[1.02] transition-transform text-sm font-bold">
                 {t.ctaConsultation}
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
               <button
                 onClick={() => window.open(getWhatsAppUrl(t.waPreFill), '_blank')}
-                className="btn-outline flex items-center justify-center gap-3"
+                className="btn-outline w-full sm:w-auto flex items-center justify-center gap-2 py-3 sm:py-2.5 px-8 rounded-xl hover:bg-primary/5 active:scale-95 transition-all text-sm font-bold"
               >
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle className="w-4 h-4" />
                 {t.ctaChat}
               </button>
             </div>
 
-            <div className="pb-4" />
+            <div className="sm:hidden pb-2" />
           </motion.div>
 
           {/* Right Column: Doctor Profile */}
-          <div className="col-span-12 lg:col-span-5">
+          <div className="col-span-12 lg:col-span-5 mt-12 lg:mt-0">
             <motion.div
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "circOut" }}
-              className="relative group"
+              className="relative group max-w-[400px] lg:max-w-none mx-auto"
             >
-              <div className="relative aspect-[4/5] rounded-[48px] overflow-hidden shadow-2xl-premium border-8 border-white bg-accent/10">
+              <div className="relative aspect-[4/5] rounded-[32px] md:rounded-[48px] overflow-hidden shadow-2xl-premium border-4 md:border-8 border-white bg-accent/10">
                 <img
                   src={dr}
                   alt="Dr. Priyankar"
@@ -525,35 +527,35 @@ const HomePage = ({ t }: { t: any }) => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5 }}
-                  className="absolute top-8 right-8 bg-white/95 backdrop-blur-md p-5 rounded-[32px] shadow-2xl border border-white/50 text-center min-w-[120px] ring-1 ring-primary/5"
+                  className="absolute top-4 right-4 md:top-8 md:right-8 bg-white/95 backdrop-blur-md p-3 md:p-5 rounded-2xl md:rounded-[32px] shadow-2xl border border-white/50 text-center min-w-[80px] md:min-w-[120px] ring-1 ring-primary/5"
                 >
-                  <div className="text-4xl font-black text-primary leading-none tracking-tighter">20+</div>
-                  <div className="text-[10px] font-black text-text-muted uppercase tracking-[0.2em] mt-1">Years Exp.</div>
+                  <div className="text-2xl md:text-4xl font-black text-primary leading-none tracking-tighter">20+</div>
+                  <div className="text-[8px] md:text-[10px] font-black text-text-muted uppercase tracking-[0.2em] mt-1">Years Exp.</div>
                 </motion.div>
 
                 {/* Rating Badge */}
-                <div className="absolute top-8 left-8 bg-black/20 backdrop-blur-lg px-4 py-2 rounded-2xl border border-white/20 flex items-center gap-2">
+                <div className="absolute top-4 left-4 md:top-8 md:left-8 bg-black/20 backdrop-blur-lg px-3 py-1.5 md:px-4 md:py-2 rounded-xl md:rounded-2xl border border-white/20 flex items-center gap-1.5 md:gap-2">
                   <div className="flex text-yellow-400">
-                    <Heart className="w-3 h-3 fill-current" />
+                    <Heart className="w-2.5 h-2.5 md:w-3 md:h-3 fill-current" />
                   </div>
-                  <span className="text-white text-[10px] font-bold">Top Rated Expert</span>
+                  <span className="text-white text-[8px] md:text-[10px] font-bold tracking-tight">Top Rated Expert</span>
                 </div>
               </div>
 
               {/* Name & Credentials Card */}
-              <div className="absolute -bottom-6 -left-6 -right-6 lg:-right-12 bg-white p-10 rounded-[40px] shadow-2xl-premium border border-gray-100">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-4xl font-black text-text-main tracking-tight mb-1">Dr. Priyankar</h3>
-                    <p className="text-primary font-extrabold text-[10px] uppercase tracking-widest bg-primary/5 inline-block px-3 py-1 rounded-full border border-primary/10">
+              <div className="absolute -bottom-10 md:-bottom-6 -left-4 -right-4 md:-left-6 md:-right-6 lg:-right-12 bg-white p-6 md:p-10 rounded-[32px] md:rounded-[40px] shadow-2xl-premium border border-gray-100">
+                <div className="flex justify-between items-start mb-2 md:mb-4">
+                  <div className="text-left">
+                    <h3 className="text-2xl md:text-4xl font-black text-text-main tracking-tight mb-1">Dr. Priyankar</h3>
+                    <p className="text-primary font-extrabold text-[8px] md:text-[10px] uppercase tracking-widest bg-primary/5 inline-block px-2 py-0.5 md:px-3 md:py-1 rounded-full border border-primary/10">
                       B.A.M.S, MD (Ayurveda)
                     </p>
                   </div>
-                  <div className="w-12 h-12 bg-accent rounded-2xl flex items-center justify-center text-primary">
-                    <Stethoscope className="w-6 h-6" />
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-accent rounded-xl md:rounded-2xl flex items-center justify-center text-primary">
+                    <Stethoscope className="w-5 h-5 md:w-6 md:h-6" />
                   </div>
                 </div>
-                <p className="text-text-muted text-sm leading-relaxed font-medium">
+                <p className="text-text-muted text-xs md:text-sm leading-relaxed font-medium text-left">
                   {t.aboutShortDesc} <span className="text-primary">{t.aboutHighlight}</span>
                 </p>
               </div>
@@ -561,7 +563,6 @@ const HomePage = ({ t }: { t: any }) => {
           </div>
         </div>
       </section>
-
       {/* Locations Section */}
       <section className="py-24 bg-bg-base relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--color-primary)_0%,_transparent_70%)] opacity-[0.03]" />
